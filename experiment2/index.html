@@ -32,7 +32,7 @@
 	<main id="content">
 		<section>
 
-			<h1>Experiment X - Subject/Topic</h1>
+			<h1>Experiment  02: Living Impressions</h1>
 
 			<div class="minor-section">
 				<div id="canvas-container">
@@ -41,16 +41,24 @@
                 <div class="fullscreen-box">
                     <button id="fullscreen">Fullscreen</button>
                 </div>
+                <div class="reimagine-box">
+                    <button id="reimagine">Reimagine</button>
+                </div>
 			</div>
 
 			<div class="minor-section">
 				<h2>Description</h2>
-				<p>What are you trying to acomplish with this experiment?</p>
+				<p>Procedurally generate a snowy forest.</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Technical</h2>
-				<p>Describe in detail what you did technically and how it works?</p>
+				<p>The background and snow were created with polygons similar to the example provided. The tree trunks are multiple lines
+					connected together with the thickness slowly decreasing as it goes up the screen. The branches on the side and background
+					are created recursively with some randomness to their angles. The snow is creating an array of points and their size in setup(), 
+					then drawing the ellipses in draw(). They're then moved down the screen and randomly left and right until they reach one
+					of the edges and are moved back to the top/side.
+				</p>
 			</div>
 
 			<div class="minor-section">
