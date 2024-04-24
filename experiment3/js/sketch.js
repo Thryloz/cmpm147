@@ -61,12 +61,12 @@ var s = function( p ){
   }
 
   p.regenerateGrid = function() {
-    p.select("#asciiBox").value(p.gridToString(p.generateGrid(numCols, numRows)));
+    p.select("#asciiBox1").value(p.gridToString(p.generateGrid(numCols, numRows)));
     p.reparseGrid();
   }
 
   p.reparseGrid = function() {
-    currentGrid = p.stringToGrid(p.select("#asciiBox").value());
+    currentGrid = p.stringToGrid(p.select("#asciiBox1").value());
   }
 
   p.gridToString = function(grid) {
@@ -92,14 +92,14 @@ var s = function( p ){
   }
 
   p.setup = function() {
-    numCols = p.select("#asciiBox").attribute("rows") | 0;
-    numRows = p.select("#asciiBox").attribute("cols") | 0;
+    numCols = p.select("#asciiBox1").attribute("rows") | 0;
+    numRows = p.select("#asciiBox1").attribute("cols") | 0;
   
-    p.createCanvas(16 * numCols, 16 * numRows).parent("canvasContainer");
+    p.createCanvas(16 * numCols, 16 * numRows).parent("canvasContainer1");
     p.select("canvas").elt.getContext("2d").imageSmoothingEnabled = false;
   
     p.select("#reseedButton").mousePressed(p.reseed);
-    p.select("#asciiBox").input(p.reparseGrid);
+    p.select("#asciiBox1").input(p.reparseGrid);
   
     p.reseed();
   }
@@ -250,12 +250,12 @@ var s2 = function(p){
   }
 
   p.regenerateGrid = function() {
-    p.select("#asciiBox").value(p.gridToString(p.generateGrid(numCols, numRows)));
+    p.select("#asciiBox2").value(p.gridToString(p.generateGrid(numCols, numRows)));
     p.reparseGrid();
   }
 
   p.reparseGrid = function() {
-    currentGrid = p.stringToGrid(p.select("#asciiBox").value());
+    currentGrid = p.stringToGrid(p.select("#asciiBox2").value());
   }
 
   p.gridToString = function(grid) {
@@ -281,14 +281,14 @@ var s2 = function(p){
   }
 
   p.setup = function() {
-    numCols = p.select("#asciiBox").attribute("rows") | 0;
-    numRows = p.select("#asciiBox").attribute("cols") | 0;
+    numCols = p.select("#asciiBox2").attribute("rows") | 0;
+    numRows = p.select("#asciiBox2").attribute("cols") | 0;
   
-    p.createCanvas(16 * numCols, 16 * numRows).parent("canvasContainer");
+    p.createCanvas(16 * numCols, 16 * numRows).parent("canvasContainer2");
     p.select("canvas").elt.getContext("2d").imageSmoothingEnabled = false;
   
     p.select("#reseedButton").mousePressed(p.reseed);
-    p.select("#asciiBox").input(p.reparseGrid);
+    p.select("#asciiBox2").input(p.reparseGrid);
   
     p.reseed();
   }

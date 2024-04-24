@@ -36,27 +36,44 @@
 			<h1>Experiment 03 - Alternative Worlds</h1>
 			<button id="reseedButton">
 				reseed
-			  </button>
-			  <span id="seedReport"></span>
-			  <hr />
-			  <span id="canvasContainer" style="margin: 10px;"></span>
-			  <textarea cols="20" rows="20" id="asciiBox" style="opacity: 0.5; letter-spacing: 1ex; width: 320px; margin: 10px; font-family: monospace;"></textarea>
-			
+			</button>
+			<span id="seedReport"></span>
+			<hr />
+			<span id="canvasContainer1" style="margin: 10px;"></span>
+			<span id="canvasContainer2" style="margin: 10px;"></span>
+			<br>
+			<textarea cols="20" rows="20" id="asciiBox1" style="opacity: 0.5; letter-spacing: 1ex; width: 320px; margin: 10px; font-family: monospace;"></textarea>
+			<textarea cols="20" rows="20" id="asciiBox2" style="opacity: 0.5; letter-spacing: 1ex; width: 320px; margin: 10px; font-family: monospace;"></textarea>
+			<br>
 			<div id="overworld"></div> 
+			<br>
 			<div id="dungeon"></div>
 			<div class="minor-section">
 				<h2>Description</h2>
-				<p>What are you trying to acomplish with this experiment?</p>
+				<p>Generate an overworld and dungeon landscape with some autotiling and editable with the textboxes underneath.<br>
+					<u>Overworld Codes</u><br>
+					"_" = grass<br>
+					"~" = water<br>
+					"t" = tree<br>
+					"h" = house<br>
+					<u>Dungeon Codes</u><br>
+					"_" = wall<br>
+					"." = room floor<br>
+					"c" = chest<br>
+					Tiles from from <a href="https://thkaspar.itch.io/micro-tileset-overworld-dungeon">Micro Tileset - Overworld & Dungeon by thkaspar</a>
+				</p>
 			</div>
-
 			<div class="minor-section">
 				<h2>Technical</h2>
-				<p>Describe in detail what you did technically and how it works?</p>
+				<p>First the textbox is created and filled in with the constraints that I set. For example I limited the water to only the bottom of the canvas for
+					the overworld generation, chest generation can only happen on room tiles and at a small percentage, etc. It then draws the tiles based
+					on the code from the given tileset.
+				</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
-				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.</p>
+				<p>This assignment was rough. The autotiling portion was actually pretty straightforward once I took the time to process the tutorial, but the problem was the inability to layer and tiles without a background. I definitely put in a lot of effort into the project, but most of it was from trying to understand and get things working correctly rather than expressing creativity. Implementing into GitHub pages did need some more messing around with html than the other assignments which was nice. Figuring out some way to add life was also a struggle since it kept crashing every time I edited base and I wanted to do the clouds thing, but the rectangle didn’t show up. I did wish there were better instructions for this experiment.</p>
 			</div>
 
 		</section>
