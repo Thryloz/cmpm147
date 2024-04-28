@@ -176,7 +176,7 @@ function draw() {
   );
   let world_offset = cameraToWorldOffset([camera_offset.x, camera_offset.y]);
 
-  background(100);
+  background(0);
 
   if (window.p3_drawBefore) {
     window.p3_drawBefore();
@@ -294,22 +294,52 @@ function p3_tileClicked(i, j) {
 function p3_drawBefore() {}
 
 function p3_drawTile(i, j) {
-  noStroke();
 
   if (XXH.h32("tile:" + [i, j], worldSeed) % 4 == 0) {
-    fill(240, 200);
+    stroke(0, 255, 255);
+  } else if (XXH.h32("tile:" + [i, j], worldSeed) % 7 == 0){
+    stroke(125, 255, 0)
+  } else if (XXH.h32("tile:" + [i, j], worldSeed) % 5 == 0){
+    stroke(255, 125, 0)
+  } else if (XXH.h32("tile:" + [i, j], worldSeed) % 2 == 0){
+    stroke(244, 169, 0)
+  } else if (XXH.h32("tile:" + [i, j], worldSeed) % 3 == 0){
+    stroke(255, 0, 0)
   } else {
-    fill(255, 200);
+    stroke(127, 0, 255) 
   }
 
-  push();
 
+  strokeWeight(2)
+  push();
+  noFill();
   beginShape();
-  curveVertex(-tw, 0);
-  curveVertex(0, th);
-  curveVertex(tw, 0);
-  curveVertex(0, -th);  
-  endShape(CLOSE);
+  
+  let xoff = 0.0 
+  let yoff = 0.0
+  let y = 0;
+  
+  for (let x = -tw; x <= 0; x++){
+    let noiseScale = map(noise(x * xoff, yoff), 0, 1, -20, 20)
+    vertex(x, y + noiseScale * noise(noiseScale*x, noiseScale * frameCount/500) )
+    y += th/tw
+    xoff += 0.0025;
+    yoff += 0.001
+  }
+  
+  xoff = 0.0
+  yoff = 0.0
+  endShape()
+  
+  beginShape()
+  for (let x = tw; x >= 0; x--){
+    let noiseScale = map(noise(x * xoff, yoff), 0, 1, -20, 20)
+    vertex(x, y + noiseScale * noise(noiseScale*x, noiseScale * frameCount/500) )
+    y += th/tw
+    xoff += 0.0025;
+    yoff += 0.001
+  }
+  endShape();
 
   let n = clicks[[i, j]] | 0;
   if (n % 2 == 1) {
