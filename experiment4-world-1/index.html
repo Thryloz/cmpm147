@@ -2,7 +2,7 @@
 <html>
 <head>
 	<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment 4 - Infinite Worlds</title>
+	<title>Experiment 4 - Infinite Worlds 1</title>
 
 	<!-- Use UTF character set, a good idea with any webpage -->
 	<meta charset="UTF-8" />
@@ -32,7 +32,7 @@
 	<main id="content">
 		<section>
 
-			<h1>Experiment  04: Infinite Worlds</h1>
+			<h1>Experiment  04: Infinite Worlds 1</h1>
 
 			<div class="minor-section">
 				<div id="canvas-container">
@@ -45,33 +45,24 @@
 
 			<div class="minor-section">
 				<h2>Description</h2>
-				<p>Procedurally generate a snowy forest.</p>
+				<p>Generate an infinitely extending colorful, wavy grid.</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Technical</h2>
-				<p>The background and snow were created with polygons similar to the example provided. The tree trunks are multiple lines
-					connected together with the thickness slowly decreasing as it goes up the screen. The branches on the side and background
-					are created recursively with some randomness to their angles. The snow is creating an array of points and their size in setup(), 
-					then drawing the ellipses in draw(). They're then moved down the screen and randomly left and right until they reach one
-					of the edges and are moved back to the top/side.
-					This project offers a generative, living impression inspired from these images:
-					<img src="https://cdn.glitch.global/a94b1688-1586-4dd2-9f3a-dde2a62d9cc3/QCNR_big-trees-snowpack_UST.jpg?v=1713137140305"><br>
-					<a href="https://www.usu.edu/today/story/snowbound-big-trees-boost-water-in-forests-by-protecting-snowpack" target="_blank">[Source]</a><br>
-					Relation to inspring image:<br>
-
-					Color: The snow and tree colors were sampled from the inspiring image using the Krita eyedropper tool.<br>
-					Primitives: The trees are rendered with line primitives.<br>
-					Polygons: The two snow layers a single randomly polygon using vertex calls.<br>
-					Composition: Different random seed values lead to differently positioned trees, differently shaped branches and snow.<br>
-					Life: There's snow slowly falling and the whole image moves slightly with the mouse cursor.<br>
-					<a href = "https://experiment-02.glitch.me" target = "_blank">[Better Glitch Version]</a>
+				<p>Technically similar to the example with the major difference being in the drawTile() function. Rather than one shape,
+					it creates two shapes for the lines, top left to bottom right and top right to bottom left. When drawing, the x increases
+					incrementally, but the y is calculated using noise while still following the general path. Changing the key changes the 
+					frequency and amplitude of the waves as well as the colors using the hash function.
 				</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
-				<p>This project was pretty fun to work through. I learned a lot about how p5js handles moving stuff around and I enjoyed messing around with the branches. The biggest takeaway would be making sure everything is scalable next time so I wouldn’t face the same problems. A definite high was seeing the branches for the background work really out really well. Conversely a low was finding out how everything broke when transferring to the webpage. Overall an enjoyable and useful experience.</p>
+				<p> This specific world took the most amount of time, both because I needed to understand and figure out how the example code works 
+					and figuring out how to make lines between two vertices wiggle over time (which was way harder than I thought it would be). The clear
+					high was finally figuring it out after nearly 2 days and the low was how frustrating it was to make such a simple change. 
+				</p>
 			</div>
 
 		</section>
