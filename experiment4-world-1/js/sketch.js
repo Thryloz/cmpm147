@@ -120,7 +120,7 @@ function setup() {
     rebuildWorld(input.value());
   });
 
-  createP("Arrow keys scroll. Clicking changes tiles.").parent("canvas-container");
+  createP("Arrow keys scroll.").parent("canvas-container");
 
   rebuildWorld(input.value());
 }

@@ -120,7 +120,7 @@ function setup() {
     rebuildWorld(input.value());
   });
 
-  createP("Arrow keys scroll. Clicking changes tiles.").parent("canvas-container");
+  createP("Arrow keys scroll. Water color around cursor changes.").parent("canvas-container");
 
   rebuildWorld(input.value());
 }
