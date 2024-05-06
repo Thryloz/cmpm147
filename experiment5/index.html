@@ -80,18 +80,34 @@
 			</div>
 			<div class="minor-section">
 				<h2>Description</h2>
-				<p>
+				<p> 
+                    Generate an adjustable look-alike to an inspiration image which changes to optimize an evaluation score with mutations and randomization.
 				</p>
 			</div>
 			<div class="minor-section">
 				<h2>Technical</h2>
 				<p>
+                    1. The user is able to choose an image and shape from the drop down menu. <br>
+                    2. The design object is initalized depending on the shape, usually with randomized x and y coordinates, a number between 0 and 255 for fill, and 
+                    in cases of the circle, a diameter. <br>
+                    3. The design is rendered, then the mutation function randomizes the shapes sizes and colors. This feeds back into an evaluation function
+                    giving the current design a score and comparing it to the best design, then adjusts the active image to be similar to the best image. <br>
+                    4. The mutation slider controls the size of the changes/mutations. At 1%, the changes are very minimal.<br>
+                    5. The intention is for the user to slowly move the slider back from 100% to 1% over the course of 30s, a process called annealing, to slowly
+                    fine-tune generator.
 				</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
-				<p></p>
+				<p>This is one of those assignments where you are never truly finished. You can continue tweaking, tuning, and adjusting things 
+                    (there’s a good chance that I will add more shapes after turning it in on the webpage). 
+                    If I were to rank the shapes: <br>
+                        1. rectangle <br>
+                        2. ellipse <br>
+                        3. circle <br>
+                        4. triangle <br>
+                    The triangle was the worst, but making it equilateral would probably make it better. The only low was trying to figure things out before the Friday update dropped. One high was getting it working for the first time and seeing a somewhat similar image slowly take shape, which was actually really interesting to see. Another high was getting the new shape drop down working.</p>
 			</div>
 
 		</section>
